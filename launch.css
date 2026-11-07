@@ -1,0 +1,77 @@
+/* Shared launch polish. Load last on each public page. */
+:root {
+  --section-space: clamp(56px, 6.2vw, 88px);
+  --radius-card: 10px;
+}
+body { overflow-wrap: break-word; }
+.skip-link { position: fixed; left: 16px; top: -100px; z-index: 4000; padding: 12px 20px; background: white; color: var(--blue-deep); border: 2px solid var(--blue); border-radius: 6px; }
+.skip-link:focus { top: 10px; }
+main:focus { outline: none; }
+.brand img { height: 68px; }
+.footer-brand img { height: auto; }
+.top-strip a { white-space: nowrap; }
+.nav-links { gap: 24px; }
+.page-hero, .about-hero, .service-hero,
+.project-history-page .history-hero { min-height: 400px; }
+.page-hero-content, .about-hero-content, .service-hero-content { padding-block: 64px; }
+.page-hero h1, .about-hero h1, .service-hero h1 { font-size: clamp(2.25rem, 4.3vw, 3.75rem); }
+.history-intro { padding-top: var(--section-space); }
+.history-intro-heading h2 { font-size: var(--heading-size); line-height: 1.18; letter-spacing: -.03em; }
+.history-project { padding-block: var(--section-space); }
+.history-project-nav a { border-radius: var(--radius-button); }
+.history-photo { border-radius: var(--radius-card); }
+.hero-photo { object-position: 58% center; }
+.hero-overlay { background: linear-gradient(90deg, rgba(4,40,72,.94), rgba(4,40,72,.81) 48%, rgba(4,40,72,.28)); }
+.footer-grid { grid-template-columns: 1.1fr .65fr .8fr 1.65fr; gap: 36px; }
+.footer-grid > div { min-width: 0; }
+.footer-description { max-width: 245px; margin-top: 16px; }
+.footer-contact p { margin-bottom: 12px; }
+.footer-contact p a { display: inline; overflow-wrap: anywhere; }
+.footer-contact p a[href^="tel:"] { display: inline-block; padding-block: 2px; }
+.footer-contact p br + a { margin-top: 3px; }
+.footer-bottom { gap: 20px; }
+.contact-copy > p:not(.section-label) { color: var(--muted); line-height: 1.8; }
+.contact-item a { color: var(--blue-dark); }
+.contact-item a:hover, .footer-contact a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.office-map { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface-soft); box-shadow: var(--card-shadow); }
+.office-map iframe { display: block; width: 100%; height: 380px; border: 0; background: #e8f0f6; }
+.office-map-details { padding: 26px; }
+.office-map-details h3 { margin: 10px 0; color: var(--blue-deep); font-family: "Montserrat", Arial, sans-serif; font-size: 1.15rem; line-height: 1.5; }
+.office-map-details p:not(.section-label) { color: var(--muted); font-size: .94rem; line-height: 1.8; }
+.modal[aria-hidden="false"] { overflow-y: auto; }
+.modal-content { min-width: 0; }
+.modal-content p { max-width: 680px; padding-inline: 20px; }
+@media (min-width: 1025px) {
+  .menu-button { display: none; }
+  .nav-links { display: flex; position: static; flex-direction: row; align-items: center; gap: 24px; padding: 0; max-height: none; overflow: visible; border: 0; box-shadow: none; background: transparent; }
+  .nav-links a { padding: 34px 0 31px; }
+  .nav-links a::after { bottom: 22px; }
+}
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px 48px; }
+  .contact-layout { gap: 36px; }
+}
+@media (max-width: 760px) {
+  .page-hero, .about-hero, .service-hero,
+  .project-history-page .history-hero { min-height: 350px; }
+  .page-hero-content, .about-hero-content, .service-hero-content { padding-block: 56px; }
+  .page-hero h1, .about-hero h1, .service-hero h1 { font-size: clamp(2.1rem, 7.5vw, 3rem); }
+  .brand { width: 210px; }
+  .brand img { height: 62px; }
+  .hero { min-height: 560px; }
+  .history-project { padding-block: 44px; }
+  .office-map iframe { height: 310px; }
+  .office-map-details { padding: 22px; }
+  .footer-bottom { align-items: flex-start; }
+  .contact-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .top-strip-inner { gap: 8px; font-size: .67rem; }
+  .brand { width: min(205px, calc(100% - 64px)); }
+  .hero-actions .btn { flex: 1 1 135px; }
+  .footer-bottom { flex-direction: column; gap: 16px; }
+  .footer-description { max-width: 290px; }
+  .modal { padding: 66px 16px 24px; }
+  .modal-close { right: 16px; top: 12px; }
+}
